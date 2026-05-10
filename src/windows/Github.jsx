@@ -9,7 +9,7 @@ const GitCard = ({ repo }) => {
         <div className="card">
             <img src={repo.image} alt="" />
            <h1>{repo.title}</h1>
-           <p>{repo.description}</p>
+           <p className='description'>{repo.description}</p>
 
            <div className="tags">
             {repo.tags.map(tag=><p className='tag'>{tag}</p>  )}
@@ -17,7 +17,7 @@ const GitCard = ({ repo }) => {
 
            <div className="urls">
             <a href={repo.repoLink}>Repository</a>
-            <a href={repo.demoLink}>Demo</a>
+           {repo.demoLink && <a href={repo.demoLink}>Demo</a>}
            </div>
         </div>
     )
