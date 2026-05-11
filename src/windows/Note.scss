@@ -3,8 +3,12 @@
     height: 100%;
     width: 100%;
     padding: 1rem;
+    padding-bottom: 5rem;
+    font-size: 1.1rem;
 
-    &::-webkit-scrollbar{
-        display: none;
+   
+
+    pre{
+        background-color: transparent !important;
     }
 }
