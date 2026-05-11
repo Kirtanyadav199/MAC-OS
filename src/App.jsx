@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './app.scss'
 import Dock from './components/Dock'
 import Nav from './components/Nav'
@@ -10,16 +10,32 @@ import Cli from './windows/Cli'
 
 
 
+
 const App = () => {
+
+   const[windows,setWindows] = useState({
+  github: false,
+  resume: false,
+  spotify: false,
+  cli: false,
+  note: false
+
+  })
+
   return (
     <main>
      <Nav/>
-     <Dock/>
-     <Github/>
-     <Note/>
-     <Resume/>
-     <Spotify/>
-     <Cli/>
+     <Dock setWindows={setWindows} windows={windows}/>
+   {windows.github && <Github closeWindow={()=>{
+    setWindows(prev=>({
+      ...prev,
+      github:false
+    }))
+   }}/>}
+  {windows.resume && <Resume />}
+  {windows.spotify && <Spotify />}
+  {windows.cli && <Cli />}
+  {windows.note && <Note/>}
     </main>
   )
 }

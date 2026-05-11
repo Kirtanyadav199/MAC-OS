@@ -3,7 +3,7 @@ import { Rnd } from 'react-rnd'
 import './MacWindow.scss'
 
 const MacWindow = ({ children,width=500,height=400,minWidth=400,
-  minHeight=300}) => {
+  minHeight=300,closeWindow}) => {
   return (
     <Rnd default={{
     x: 250,
@@ -19,7 +19,9 @@ const MacWindow = ({ children,width=500,height=400,minWidth=400,
         <div className="window">
             <div className="nav">
                 <div className="dots">
-                    <div className="dot red"></div>
+                    <div className="dot red"
+                    onClick={closeWindow}
+                    ></div>
                     <div className="dot yellow"></div>
                     <div className="dot green"></div>
                 </div>

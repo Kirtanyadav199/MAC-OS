@@ -1,10 +1,29 @@
 import React from 'react'
 import './dock.scss'
 
-const Dock = () => {
+
+const Dock = ({setWindows,windows}) => {
   return (
     <footer className='dock'>
-<div className="icon github"><img src="/doc-icons/github.svg" alt="" /></div>
+<div className="icon github"
+onClick={()=>{
+  if(windows.github == false){
+setWindows(prev =>({
+    ...prev,
+    github:true
+  }))
+  }
+  else{
+    setWindows(prev =>({
+    ...prev,
+    github:false
+  }))
+  }
+}}
+
+>
+  <img src="/doc-icons/github.svg" alt="" />
+  </div>
 <div className="icon note"><img src="/doc-icons/note.svg" alt="" /></div>
 <div className="icon pdf"><img src="/doc-icons/pdf.svg" alt="" /></div>
 <div className="icon calender"><img src="/doc-icons/calender.svg" alt="" /></div>
