@@ -12,7 +12,10 @@ const MacWindow = ({ children,width=500,height=400,minWidth=400,
     height: height,
   }}
    minWidth= {minWidth}
-  minHeight={minHeight}>
+  minHeight={minHeight}
+  dragHandleClassName="nav"
+  cancel=".main-content"
+  >
         <div className="window">
             <div className="nav">
                 <div className="dots">
