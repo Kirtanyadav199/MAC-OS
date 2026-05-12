@@ -6,7 +6,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 
-const Note = () => {
+const Note = ({closeWindow}) => {
 
     const [markdown, setMarkdown] = useState('')
 
@@ -18,7 +18,7 @@ const Note = () => {
 
 
   return (
-  <MacWindow>
+  <MacWindow closeWindow={closeWindow}>
     <div className="note-window">
     {markdown?<SyntaxHighlighter language="typecript" style={docco}>{markdown}</SyntaxHighlighter>: <p>Loading...</p>}
     </div>

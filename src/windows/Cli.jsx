@@ -4,7 +4,7 @@ import MacWindow from './MacWindow'
 import "./Cli.scss"
 
 
-const Cli = () => {
+const Cli = ({closeWindow}) => {
 
   const[input,setInput] = useState('')
   const[history,setHistory] = useState([])
@@ -86,7 +86,7 @@ const handleCommand = ()=>{
   setInput("")
 }
   return (
-    <MacWindow>
+    <MacWindow closeWindow={closeWindow}>
       <div className="cli-window">
       <div className="history">
         {history.map((elem,idx)=>{

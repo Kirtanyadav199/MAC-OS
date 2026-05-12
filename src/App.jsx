@@ -25,17 +25,50 @@ const App = () => {
   return (
     <main>
      <Nav/>
+
      <Dock setWindows={setWindows} windows={windows}/>
+
+
    {windows.github && <Github closeWindow={()=>{
     setWindows(prev=>({
       ...prev,
       github:false
     }))
    }}/>}
-  {windows.resume && <Resume />}
-  {windows.spotify && <Spotify />}
-  {windows.cli && <Cli />}
-  {windows.note && <Note/>}
+
+  {windows.resume && <Resume 
+  closeWindow={()=>{
+    setWindows(prev=>({
+      ...prev,
+      resume:false
+    }))
+   }}
+  />}
+
+  {windows.spotify && <Spotify 
+  closeWindow={()=>{
+    setWindows(prev=>({
+      ...prev,
+      spotify:false
+    }))
+   }}
+  />}
+  {windows.cli && <Cli
+  closeWindow={()=>{
+    setWindows(prev=>({
+      ...prev,
+      cli:false
+    }))
+   }}
+   />}
+  {windows.note && <Note
+  closeWindow={()=>{
+    setWindows(prev=>({
+      ...prev,
+      note:false
+    }))
+   }}
+  />}
     </main>
   )
 }

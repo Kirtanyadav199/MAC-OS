@@ -2,11 +2,11 @@ import React from 'react'
 import MacWindow from './MacWindow'
 import './Resume.scss'
 
-const Resume = () => {
+const Resume = ({closeWindow}) => {
   return (
-    <MacWindow>
+    <MacWindow closeWindow={closeWindow}>
         <div className="resume-window">
-             <iframe src="./resume.pdf" frameborder="0"></iframe>
+             <iframe src='./resume.pdf' frameborder="0"></iframe>
         </div>
        
     </MacWindow>
